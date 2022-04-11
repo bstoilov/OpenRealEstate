@@ -2,16 +2,32 @@
     <div class="row">
         <div class="col-sm-6" *ngFor="let home of homes">
             <div class="row home_entry mb-1">
-                <div class="col-sm-4 p-1 image" [style.background-image]="'url(' + home.image + ')'">
+                <div class="col-sm-4">
+                    <img class="image mt-2" [src]="home.image" />
                 </div>
                 <div class="col-sm-8">
-                    <div class="card">
-                        <div class="col-2">{{home.title}}</div>
+                    <div class="row">
+                        <mat-card>
+                            <mat-card-title>{{home.title}}</mat-card-title>
+                            <mat-card-content>
+                                <div class="home-contant">
+                                    <p class="card-text">{{home.description}}</p>
+                                </div>
+
+                            </mat-card-content>
+                            <mat-card-footer>
+                                <div class="d-flex flex-row-reverse">
+                                    <div class="p-1" *ngFor="let tag of genTags">
+                                        <button class="btn tag"
+                                            [style.background-color]="tag['color']">{{tag['name']}}</button>
+                                    </div>
+                                </div>
+                            </mat-card-footer>
+                        </mat-card>
                     </div>
+
                 </div>
             </div>
         </div>
+
     </div>
-
-
-</div>

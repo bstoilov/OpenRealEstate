@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomesComponent } from "./homes/homes.component";
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+
+
 
 @NgModule({
   declarations: [
@@ -16,6 +20,8 @@ import { HomesComponent } from "./homes/homes.component";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatCardModule,
+    MatChipsModule,
     NgbModule
   ],
   providers: [],
