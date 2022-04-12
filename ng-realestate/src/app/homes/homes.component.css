@@ -5,14 +5,20 @@
 }
 
 .image {
-    width: 12vw;
-    height: 12vw;
-    object-fit: cover;
+    width: 200px;
+    height: 200px;
 }
 
 .tag {
-    display: inline-block;
-    border-radius: 15%;
+    margin: 0.4rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border: 0.1rem solid black;
+    width: 10rem;
+    text-align: center;
+}
+
+.link_box {
     font-size: 0.7rem;
-    background-color: rgb(255, 255, 255);
+    font-weight: bolder;
 }

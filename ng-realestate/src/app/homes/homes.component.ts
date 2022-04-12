@@ -30,29 +30,29 @@ export class HomesComponent {
     "In an excellent location, Caring Hotel offers comfortable, good value accommodation, just a short walk from Queensway Underground Station, Hyde Park, Kensington Gardens and Paddington Train Station."
   ]
 
-  tags = [
+  tags: Array<{ name: string, color: string }> = [
     {
-      "name": "flat",
+      "name": "Taken",
       "color": this.randColor
     },
     {
-      "name": "house",
+      "name": "Sold",
       "color": this.randColor
     },
     {
-      "name": "cozzy",
+      "name": "Free",
       "color": this.randColor
     },
     {
-      "name": "good location",
+      "name": "Under Construction",
       "color": this.randColor
     },
     {
-      "name": "ground floor",
+      "name": "Not Liveable",
       "color": this.randColor
     },
     {
-      "name": "metro access",
+      "name": "Down Payment",
       "color": this.randColor
     }
   ]
@@ -108,10 +108,12 @@ export class HomesComponent {
       let imageUrl = this.getRandElement(this.images);
       let title = this.getRandElement(this.titles);
       let description = this.getRandElement(this.descriptions);
+      let tag: any = this.getRandElement(this.tags);
       result.push({
         "title": title,
         "description": description,
-        "image": imageUrl
+        "image": imageUrl,
+        "tag": tag
       })
     }
 
@@ -123,11 +125,7 @@ export class HomesComponent {
     let g = Math.floor(Math.random() * 255);
     let b = Math.floor(Math.random() * 255);
 
-    return `rgba(${r}, ${g}, ${b}, 0.4)`;
-  }
-
-  get genTags() {
-    return this.tags;
+    return `rgba(${r}, ${g}, ${b}, 0.5)`;
   }
 
   private getRandElement(arr: Object[]) {
