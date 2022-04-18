@@ -1,21 +1,45 @@
 .home_entry {
     width: 100%;
-    border: 1px black solid;
-    height: 25vh;
+    border: 1px #c6c6c6 solid;
 }
 
 .image {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 250px;
+    border-radius: 1vh;
+}
+
+.arrow-left {
+}
+
+.arrow-right {
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.arrow:hover {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+.arrow {
+    font-size: 4rem;
+    color: rgba(245, 243, 243, 0.75);
+    position: absolute;
+    top: 35%
+}
+
+.image_container {
+    position: relative;
 }
 
 .tag {
     margin: 0.4rem;
     padding: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     border: 0.1rem solid black;
-    width: 10rem;
+    width: 9rem;
     text-align: center;
+    border-radius: 50vh;
 }
 
 .link_box {

@@ -1,11 +1,15 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: 'homes-component',
   templateUrl: './homes.component.html',
   styleUrls: ['./homes.component.css']
 })
-export class HomesComponent {
+export class HomesComponent implements OnInit {
+
+  ngOnInit() {
+    this.genHomes();
+  }
   title = 'ng-realestate';
 
   titles = [
@@ -102,9 +106,11 @@ export class HomesComponent {
     "https://images.unsplash.com/photo-1537200086021-dd85d29e229f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjU2fHxhcGFydG1lbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
   ]
 
-  get homes() {
+  homes: any = []
+
+  private genHomes() {
     let result = []
-    for (let i = 0; i < 500; i++) {
+    for (let i = 0; i < 100; i++) {
       let imageUrl = this.getRandElement(this.images);
       let title = this.getRandElement(this.titles);
       let description = this.getRandElement(this.descriptions);
@@ -117,18 +123,26 @@ export class HomesComponent {
       })
     }
 
-    return result;
+    this.homes= result;
+  }
+
+  genNewImage(home: any) {
+    home['image'] = this.getRandElement(this.images);
   }
 
   get randColor() {
-    let r = Math.floor(Math.random() * 255);
-    let g = Math.floor(Math.random() * 255);
-    let b = Math.floor(Math.random() * 255);
+    let base = 150;
+    let range = 255 - base;
+    let r = base + Math.floor(Math.random() * range);
+    let g = base + Math.floor(Math.random() * range);
+    let b = base + Math.floor(Math.random() * range);
 
-    return `rgba(${r}, ${g}, ${b}, 0.5)`;
+    return `rgba(${r}, ${g}, ${b})`;
   }
 
   private getRandElement(arr: Object[]) {
     return arr[Math.floor(Math.random() * arr.length)];
   }
+
+
 }
