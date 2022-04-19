@@ -8,13 +8,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomesComponent } from "./homes/homes.component";
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
+import { MapModalComponent } from "./modals/map/map.modal.component";
+import { MatDialogModule } from "@angular/material/dialog";
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomesComponent
+    HomesComponent,
+    MapModalComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { MatChipsModule } from '@angular/material/chips';
     BrowserAnimationsModule,
     MatCardModule,
     MatChipsModule,
-    NgbModule
+    NgbModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

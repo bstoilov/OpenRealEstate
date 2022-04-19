@@ -1,4 +1,9 @@
-.home_entry {
+* {
+    transition: all 0.2s ease;
+}
+
+
+.home-entry {
     width: 100%;
     border: 1px #c6c6c6 solid;
 }
@@ -6,11 +11,30 @@
 .image {
     width: 300px;
     height: 250px;
-    border-radius: 1vh;
+}
+.shrink-hover:hover {
+    transform: scale(0.99);
+}
+
+.large-font {
+    font-size: 1rem;
+}
+
+.money-value {
+    font-size: 1.5rem;
+}
+.avatar {
+    width: 130px;
+    height: 130px;
 }
 
 .arrow-left {
 }
+
+.border-right {
+    border-right: 2px solid rgba(210, 208, 208, 0.34);
+}
+
 
 .arrow-right {
     right: 0;
@@ -28,6 +52,15 @@
     top: 35%
 }
 
+.link-text {
+    color: dodgerblue;
+}
+
+.link-text:hover {
+    color: blue;
+    cursor: pointer;
+}
+
 .image_container {
     position: relative;
 }
@@ -36,10 +69,10 @@
     margin: 0.4rem;
     padding: 0.5rem;
     font-size: 0.8rem;
-    border: 0.1rem solid black;
     width: 9rem;
     text-align: center;
     border-radius: 50vh;
+    color: rgba(0, 0, 0, 0.78);
 }
 
 .link_box {

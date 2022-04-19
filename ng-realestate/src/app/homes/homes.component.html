@@ -1,9 +1,9 @@
 <div class="container-fluid mt-5">
     <div class="row">
         <div class="col-sm-12" *ngFor="let home of homes">
-            <div class="d-flex flex-row home_entry mb-3 p-3">
+            <div class="d-flex flex-row home-entry mb-3 p-3">
                 <div class="image_container">
-                    <img class="image" [src]="home.image" alt="Current image of the property"/>
+                    <img class="image rounded shrink-hover" [src]="home.image" alt="Current image of the property"/>
                     <div class="arrow arrow-left" (click)="genNewImage(home)">
                         <i class="bi bi-caret-left"></i>
                     </div>
@@ -16,26 +16,60 @@
                         <mat-card-title><a href="">{{home.title}}</a></mat-card-title>
                         <mat-card-subtitle>
                             <div class="link_box mt-2">
-                                <p>London <a href="">Show On Map</a></p>
+                                <p>London <span class="link-text" (click)="openMapDialog()">Show On Map</span></p>
                             </div>
                         </mat-card-subtitle>
                         <mat-card-content>
                             <div class="row">
+                                <div class="col-sm-6 border-right">
+                                    <div class="row">
+                                        <p>{{home.description}}</p>
+                                    </div>
+                                    <div class="row text-center mt-2">
+                                        <div class="col-sm-4 large-font">
+                                            <i class="bi bi-credit-card-2-back"></i>
+                                            <span class="m-lg-2">Income</span>
+                                            <div class="money-value mt-3">56</div>
+                                        </div>
+                                        <div class="col-sm-4 large-font">
+                                            <i class="bi bi-hammer"></i>
+                                            <span class="m-lg-2">Expense</span>
+                                            <div class="money-value mt-3">56</div>
+                                        </div>
+                                        <div class="col-sm-4 large-font">
+                                            <i class="bi bi-piggy-bank"></i>
+                                            <span class="m-lg-2">Profit</span>
+                                            <div class="money-value mt-3">56</div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-sm-6">
-                                    <div>
-                                        <p class="card-text">{{home.description}}</p>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <img class="avatar rounded-circle shrink-hover" [src]="home.profilePic"
+                                                 alt="Avatar of property manager"/>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <h3>Property Manager</h3>
+                                            <h5>(First Name) (Last Name)</h5>
+                                            <p>
+                                                <i class="bi bi-chat-left-dots-fill">
+                                                </i>
+                                                <span class="m-lg-2"><a href="">Direct message</a></span>
+                                            </p>
+                                            <p>
+                                                <i class="bi bi-telephone-fill"></i>
+                                                +00 345 345 345
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </mat-card-content>
-                        <mat-card-footer>
-                            <div class="m-lg-3">
-                                <p><i class="bi bi-telephone-fill"></i>
-                                    +00 345 345 345</p>
-                            </div>
-                        </mat-card-footer>
                         <div class="position-absolute top-0 end-0">
-                            <div class="tag" [style.background-color]="home.tag.color">{{home.tag.name}}</div>
+                            <div class="tag" [style.background-image]="'linear-gradient(to right, white , '+ home.tag.color +', white)'">
+                                {{home.tag.name}}
+                            </div>
                         </div>
                     </mat-card>
                 </div>
