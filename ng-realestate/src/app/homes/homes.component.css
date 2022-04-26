@@ -2,7 +2,6 @@
     transition: all 0.2s ease;
 }
 
-
 .home-entry {
     width: 100%;
     border: 1px #c6c6c6 solid;
@@ -12,6 +11,7 @@
     width: 300px;
     height: 250px;
 }
+
 .shrink-hover:hover {
     transform: scale(0.99);
 }
@@ -23,6 +23,7 @@
 .money-value {
     font-size: 1.5rem;
 }
+
 .avatar {
     width: 130px;
     height: 130px;
@@ -35,7 +36,6 @@
     border-right: 2px solid rgba(210, 208, 208, 0.34);
 }
 
-
 .arrow-right {
     right: 0;
     transform: rotate(180deg);
@@ -45,6 +45,7 @@
     cursor: pointer;
     color: rgb(255, 255, 255);
 }
+
 .arrow {
     font-size: 4rem;
     color: rgba(245, 243, 243, 0.75);
@@ -75,7 +76,19 @@
     color: rgba(0, 0, 0, 0.78);
 }
 
+.bold-hover:hover {
+    font-weight: bolder;
+}
+
 .link_box {
     font-size: 0.7rem;
     font-weight: bolder;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.cursor-pointer-hover:hover {
+    cursor: pointer;
 }

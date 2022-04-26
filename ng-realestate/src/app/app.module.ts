@@ -10,21 +10,27 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MapModalComponent } from "./modals/map/map.modal.component";
 import { MatDialogModule } from "@angular/material/dialog";
-
-
+import { MatInputModule } from "@angular/material/input";
+import { FormsModule } from "@angular/forms";
+import { MatIconModule } from "@angular/material/icon";
+import { HomeImagesModal } from "./homes/images/images.modal.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomesComponent,
-    MapModalComponent
+    MapModalComponent,
+    HomeImagesModal
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
+    FormsModule,
+    MatIconModule,
     MatChipsModule,
+    MatInputModule,
     NgbModule,
     MatDialogModule
   ],

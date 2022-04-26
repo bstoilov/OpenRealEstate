@@ -5,7 +5,7 @@ import { MatDialogRef } from "@angular/material/dialog";
 @Component({
   selector: 'map-component',
   templateUrl: './map.modal.component.html',
-  styleUrls: ['./map.modal.component.css']
+  styleUrls: []
 })
 export class MapModalComponent {
   constructor(public dialogRef: MatDialogRef<MapModalComponent>) { }

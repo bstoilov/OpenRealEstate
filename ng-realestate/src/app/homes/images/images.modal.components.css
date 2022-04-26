@@ -1,0 +1,39 @@
+* {
+    transition: all 0.2s ease;
+}
+
+.card-img-top {
+    width: 20vw;
+    height: auto;
+    object-fit: contain;
+}
+
+img:hover {
+    transform: scale(1.05);
+    z-index: 1000;
+}
+
+.card {
+    break-inside: avoid;
+}
+
+@media (max-width: 575.98px){
+    .card-columns {
+        column-count: 1; }
+}
+@media (min-width: 576px){
+    .card-columns {
+        column-count: 2; }
+}
+@media (min-width: 768px){
+    .card-columns {
+        column-count: 3; }
+}
+@media (min-width: 992px){
+    .card-columns {
+        column-count: 3; }
+}
+@media (min-width: 1200px){
+    .card-columns {
+        column-count: 3; }
+}

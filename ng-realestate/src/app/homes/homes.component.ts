@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { MapModalComponent } from "../modals/map/map.modal.component";
+import { HomeImagesModal } from "./images/images.modal.component";
 
 @Component({
   selector: 'homes-component',
@@ -9,13 +10,17 @@ import { MapModalComponent } from "../modals/map/map.modal.component";
 })
 export class HomesComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) {
+  }
 
   ngOnInit() {
     this.genHomes();
   }
+
+  searchText = "";
   title = 'ng-realestate';
   mapDialogRef: any = null;
+  homeImagesDialogRef: any = null;
 
   titles = [
     "Cozy apartement",
@@ -137,6 +142,16 @@ export class HomesComponent implements OnInit {
 
   homes: any = []
 
+  get properties() {
+    console.log(this.searchText);
+    if (this.searchText === "") {
+      return this.homes;
+    }
+    return this.homes
+      .filter((p: any) => p['title'].includes(this.searchText) || p['description'].includes(this.searchText))
+  }
+
+
   private genHomes() {
     let result = []
     for (let i = 0; i < 100; i++) {
@@ -149,7 +164,7 @@ export class HomesComponent implements OnInit {
       })
     }
 
-    this.homes= result;
+    this.homes = result;
   }
 
   genNewImage(home: any) {
@@ -173,6 +188,28 @@ export class HomesComponent implements OnInit {
   openMapDialog() {
     this.mapDialogRef = this.dialog.open(MapModalComponent);
   }
+
+  openImagesModal() {
+    let images = this.genRandImages(25);
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = images;
+
+    this.homeImagesDialogRef = this.dialog.open(HomeImagesModal, dialogConfig);
+  }
+
+  genRandImages(count: number) {
+    let images = [];
+
+    for (let i = 0; i < count; i++) {
+      images.push(this.getRandElement(this.images));
+    }
+
+    return images;
+  }
+
+
 
 
 }

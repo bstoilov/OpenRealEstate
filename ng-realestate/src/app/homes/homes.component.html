@@ -1,9 +1,18 @@
 <div class="container-fluid mt-5">
     <div class="row">
-        <div class="col-sm-12" *ngFor="let home of homes">
+        <div class="col-3">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Search properties</mat-label>
+                <input matInput placeholder="Search text" [(ngModel)]="searchText">
+                <mat-icon matSuffix aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12" *ngFor="let home of properties">
             <div class="d-flex flex-row home-entry mb-3 p-3">
                 <div class="image_container">
-                    <img class="image rounded shrink-hover" [src]="home.image" alt="Current image of the property"/>
+                    <img class="image rounded shrink-hover cursor-pointer-hover" [src]="home.image" (click)="openImagesModal()" alt="Current image of the property"/>
                     <div class="arrow arrow-left" (click)="genNewImage(home)">
                         <i class="bi bi-caret-left"></i>
                     </div>
@@ -13,7 +22,7 @@
                 </div>
                 <div class="w-100 m-lg-1">
                     <mat-card style="height: 250px">
-                        <mat-card-title><a href="">{{home.title}}</a></mat-card-title>
+                        <mat-card-title><span class="link-text">{{home.title}}</span></mat-card-title>
                         <mat-card-subtitle>
                             <div class="link_box mt-2">
                                 <p>London <span class="link-text" (click)="openMapDialog()">Show On Map</span></p>
@@ -46,16 +55,16 @@
                                 <div class="col-sm-6">
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <img class="avatar rounded-circle shrink-hover" [src]="home.profilePic"
+                                            <img class="avatar rounded-circle" [src]="home.profilePic"
                                                  alt="Avatar of property manager"/>
                                         </div>
                                         <div class="col-sm-9">
-                                            <h3>Property Manager</h3>
-                                            <h5>(First Name) (Last Name)</h5>
+                                            <h3 class="bold-hover">Property Manager</h3>
+                                            <h5 class="bold-hover">(First Name) (Last Name)</h5>
                                             <p>
                                                 <i class="bi bi-chat-left-dots-fill">
                                                 </i>
-                                                <span class="m-lg-2"><a href="">Direct message</a></span>
+                                                <span class="m-lg-2"><span class="link-text">Direct message</span></span>
                                             </p>
                                             <p>
                                                 <i class="bi bi-telephone-fill"></i>
@@ -67,7 +76,8 @@
                             </div>
                         </mat-card-content>
                         <div class="position-absolute top-0 end-0">
-                            <div class="tag" [style.background-image]="'linear-gradient(to right, white , '+ home.tag.color +', white)'">
+                            <div class="tag bold-hover"
+                                 [style.background-image]="'linear-gradient(to right, white , '+ home.tag.color +', white)'">
                                 {{home.tag.name}}
                             </div>
                         </div>
