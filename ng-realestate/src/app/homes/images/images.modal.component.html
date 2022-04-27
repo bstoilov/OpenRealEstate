@@ -1,7 +1,36 @@
 <mat-dialog-content>
+    <div class="row">
+
+    </div>
     <div class="card-columns">
-        <div class="card m-2" *ngFor="let image of images">
-            <img class="card-img-top" [src]="image" alt="Card image cap">
+        <div class="card m-2">
+            <img class="card-img-top"
+                 [src]="'https://cdn3.iconfinder.com/data/icons/buttons/512/Icon_31-1024.png'"
+                 (click)="addImage()"
+                 alt="Card image cap"
+            >
+        </div>
+        <div class="card m-2"
+             *ngFor="let image of images"
+             (mouseenter)="onImageHoverIn(image)"
+             (mouseleave)="onImageHoverOut(image)">
+            <img class="card-img-top"
+                 [src]="image.image"
+                 alt="Card image cap"
+            >
+            <div class="del-button" *ngIf="image.hovered">
+                <div class="confirm-delete"
+                     *ngIf="image.clicked"
+                     (click)="delImage(image)">
+                    <fa-icon [icon]="confirmIcon"></fa-icon>
+                </div>
+
+                <div class="delete" *ngIf="!image.clicked"
+                     (click)="delImage(image)">
+                    <fa-icon [icon]="deleteIcon"></fa-icon>
+                </div>
+
+            </div>
         </div>
     </div>
 </mat-dialog-content>

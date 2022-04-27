@@ -14,6 +14,8 @@ import { MatInputModule } from "@angular/material/input";
 import { FormsModule } from "@angular/forms";
 import { MatIconModule } from "@angular/material/icon";
 import { HomeImagesModal } from "./homes/images/images.modal.component";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { HomeService } from "./homes/home.service";
 
 @NgModule({
   declarations: [
@@ -32,9 +34,10 @@ import { HomeImagesModal } from "./homes/images/images.modal.component";
     MatChipsModule,
     MatInputModule,
     NgbModule,
-    MatDialogModule
+    MatDialogModule,
+    FontAwesomeModule
   ],
-  providers: [],
+  providers: [HomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

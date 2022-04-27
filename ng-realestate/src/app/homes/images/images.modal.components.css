@@ -8,32 +8,70 @@
     object-fit: contain;
 }
 
-img:hover {
+* {
+    cursor: pointer;
+}
+
+/*img:hover {*/
+/*    transform: scale(1.05);*/
+/*}*/
+
+.card:hover {
     transform: scale(1.05);
-    z-index: 1000;
 }
 
 .card {
     break-inside: avoid;
 }
 
-@media (max-width: 575.98px){
-    .card-columns {
-        column-count: 1; }
+.confirm-delete {
+    color: rgb(255, 0, 0);
 }
-@media (min-width: 576px){
-    .card-columns {
-        column-count: 2; }
+
+.delete {
+    color: rgba(250, 161, 161, 0.75);
 }
-@media (min-width: 768px){
-    .card-columns {
-        column-count: 3; }
+
+.del-button {
+    right: 5%;
+    top: 5%;
+    /*-ms-transform: translateY(-50%);*/
+    /*transform: translateY(-50%);*/
+    position: absolute;
+    font-size: 3rem;
 }
-@media (min-width: 992px){
-    .card-columns {
-        column-count: 3; }
+
+.del-button:hover {
+    cursor: pointer;
+    color: rgb(245, 119, 119);
 }
-@media (min-width: 1200px){
+
+@media (max-width: 575.98px) {
     .card-columns {
-        column-count: 3; }
+        column-count: 1;
+    }
+}
+
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 768px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-columns {
+        column-count: 3;
+    }
 }
