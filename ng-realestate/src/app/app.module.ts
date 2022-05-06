@@ -16,11 +16,14 @@ import { MatIconModule } from "@angular/material/icon";
 import { HomeImagesModal } from "./homes/images/images.modal.component";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { HomeService } from "./homes/home.service";
+import { ChartComponent } from './charts/chart.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomesComponent,
+    ChartComponent,
     MapModalComponent,
     HomeImagesModal
   ],

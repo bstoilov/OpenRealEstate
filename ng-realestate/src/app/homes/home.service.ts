@@ -4,12 +4,25 @@ import { Injectable } from "@angular/core";
   providedIn: 'root',
 })
 export class HomeService {
-  titles = [
+  private homes: any = [];
+
+  constructor() {
+    this.homes = this.genHomes(50);
+  }
+
+
+  public getHomes() {
+    return this.homes;
+  }
+
+
+
+  private titles = [
     "Cozy apartement",
     "Luxury familiy home"
   ]
 
-  profilePictures = [
+  private profilePictures = [
     "https://writestylesonline.com/wp-content/uploads/2018/11/Three-Statistics-That-Will-Make-You-Rethink-Your-Professional-Profile-Picture.jpg",
     "https://blog-pixomatic.s3.appcnt.com/image/22/01/26/61f166e07f452/_orig/pixomatic_1572877263963.png",
     "https://blog-pixomatic.s3.appcnt.com/image/22/01/26/61f166e1377d4/_orig/pixomatic_1572877223091.png",
@@ -31,7 +44,7 @@ export class HomeService {
     "http://thispix.com/wp-content/uploads/2015/06/portrait-profile-014-150x150.jpg"
   ]
 
-  descriptions = [
+  private descriptions = [
     "Set 8 km from Wembley Stadium, Heart of Ealing Apartment with Garden offers accommodation with a patio, as well as a garden",
     "Providing city views and free WiFi, Central London Suites - Fitzrovia provides accommodation conveniently situated in the centre of London, within a short distance of Dominion Theatre, British Museum.",
     "Featuring a shared lounge and a garden, Grenville provides accommodation in London with free WiFi and garden views. Private parking is available on site.",
@@ -48,7 +61,7 @@ export class HomeService {
     "In an excellent location, Caring Hotel offers comfortable, good value accommodation, just a short walk from Queensway Underground Station, Hyde Park, Kensington Gardens and Paddington Train Station."
   ]
 
-  tags: Array<{ name: string, color: string }> = [
+  private tags: Array<{ name: string, color: string }> = [
     {
       "name": "Taken",
       "color": this.randColor
@@ -75,7 +88,7 @@ export class HomeService {
     }
   ]
 
-  images = [
+  private images = [
     "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/2e/25/da/old-town-by-welcome-apartment.jpg?w=1400&h=-1&s=1",
     "https://thumbs.dreamstime.com/b/modern-apartment-building-5569745.jpg",
     "https://thumbs.dreamstime.com/b/orange-blanket-grey-sofa-modern-apartment-interior-po-orange-blanket-grey-sofa-modern-apartment-interior-119950743.jpg",
@@ -119,13 +132,13 @@ export class HomeService {
     "https://images.unsplash.com/photo-1537200086021-dd85d29e229f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjU2fHxhcGFydG1lbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
   ]
 
-  public genRandomImage() {
+  private genRandomImage() {
     return this.getRandElement(this.images);
   }
 
-  public genHomes() {
+  private genHomes(count: number) {
     let result = []
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < count; i++) {
       result.push({
         "title": this.getRandElement(this.titles),
         "description": this.getRandElement(this.descriptions),
@@ -139,7 +152,7 @@ export class HomeService {
     return result;
   }
 
-  genRandImages(count: number) {
+  private genRandImages(count: number) {
     let images = [];
 
     for (let i = 0; i < count; i++) {
@@ -149,7 +162,7 @@ export class HomeService {
     return images;
   }
 
-  get randColor() {
+  private get randColor() {
     let base = 150;
     let range = 255 - base;
     let r = base + Math.floor(Math.random() * range);

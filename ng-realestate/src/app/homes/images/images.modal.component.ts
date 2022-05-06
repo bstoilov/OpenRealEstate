@@ -56,7 +56,7 @@ export class HomeImagesModal {
   addImage() {
     this.images.unshift({
       "hovered": false,
-      "image": this.homeService.genRandomImage(),
+     // "image": this.homeService.genRandomImage(),
       "clicked": false
     });
   }

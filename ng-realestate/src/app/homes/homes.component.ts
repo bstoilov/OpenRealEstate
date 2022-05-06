@@ -11,19 +11,20 @@ import { HomeService } from "./home.service";
 })
 export class HomesComponent implements OnInit {
 
+  homes: any = []
+
   constructor(public dialog: MatDialog, private homeService: HomeService) {
+    this.homes = homeService.getHomes();
   }
 
-  ngOnInit() {
-    this.genHomes();
+  ngOnInit(): void {
+    
   }
 
   searchText = "";
   title = 'ng-realestate';
   mapDialogRef: any = null;
   homeImagesDialogRef: any = null;
-
-  homes: any = []
 
   get properties() {
     if (this.searchText === "") {
@@ -34,12 +35,8 @@ export class HomesComponent implements OnInit {
   }
 
 
-  private genHomes() {
-    this.homes = this.homeService.genHomes();
-  }
-
   genNewImage(home: any) {
-    home['mainImage'] = this.homeService.genRandomImage();
+   // home['mainImage'] = this.homeService.genRandomImage();
   }
 
   openMapDialog() {
