@@ -4,18 +4,21 @@ import { Injectable } from "@angular/core";
   providedIn: 'root',
 })
 export class HomeService {
-  private homes: any = [];
+  private readonly homes: any = [];
 
   constructor() {
-    this.homes = this.genHomes(50);
+    let storedHomes = window.localStorage.getItem('homes');
+    if (storedHomes) {
+      this.homes = JSON.parse(storedHomes);
+    } else {
+      this.homes = this.genHomes(50);
+      window.localStorage.setItem('homes', JSON.stringify(this.homes));
+    }
   }
-
 
   public getHomes() {
     return this.homes;
   }
-
-
 
   private titles = [
     "Cozy apartement",

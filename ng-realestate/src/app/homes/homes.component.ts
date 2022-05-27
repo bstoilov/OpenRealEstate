@@ -34,9 +34,12 @@ export class HomesComponent implements OnInit {
       .filter((p: any) => p['title'].includes(this.searchText) || p['description'].includes(this.searchText))
   }
 
-
   genNewImage(home: any) {
-   // home['mainImage'] = this.homeService.genRandomImage();
+    let index = home.index ? home.index + 1 : 1;
+    home.index = index;
+    home.mainImage = home.images[index];
+
+    return home.images[index];
   }
 
   openMapDialog() {
