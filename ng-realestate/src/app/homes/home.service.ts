@@ -5,6 +5,7 @@ import { Injectable } from "@angular/core";
 })
 export class HomeService {
   private readonly homes: any = [];
+  private readonly rootAssetPath = "/OpenRealEstatePlayground"
 
   constructor() {
     let storedHomes = window.localStorage.getItem('homes');
@@ -26,25 +27,25 @@ export class HomeService {
   ]
 
   private profilePictures = [
-    "https://writestylesonline.com/wp-content/uploads/2018/11/Three-Statistics-That-Will-Make-You-Rethink-Your-Professional-Profile-Picture.jpg",
-    "https://blog-pixomatic.s3.appcnt.com/image/22/01/26/61f166e07f452/_orig/pixomatic_1572877263963.png",
-    "https://blog-pixomatic.s3.appcnt.com/image/22/01/26/61f166e1377d4/_orig/pixomatic_1572877223091.png",
-    "https://blog-pixomatic.s3.appcnt.com/image/22/01/26/61f166e1e3b25/_orig/pixomatic_1572877090227.png",
-    "https://blog-pixomatic.s3.appcnt.com/image/22/01/26/61f166e28993f/_orig/pixomatic_1572877034633.png",
-    "http://thispix.com/wp-content/uploads/2015/06/Edit-3722-1-300x300.jpg",
-    "http://thispix.com/wp-content/uploads/2015/06/Copy-of-Edit-1798-1-300x300.jpg",
-    "http://thispix.com/wp-content/uploads/2015/06/Edit-3700-1-300x300.jpg",
-    "http://thispix.com/wp-content/uploads/2015/06/Copy-of-edit-4241-1-300x300.jpg",
-    "http://thispix.com/wp-content/uploads/2015/06/Edit-4850-1-300x300.jpg",
-    "http://thispix.com/wp-content/uploads/2015/06/Edit-7576-1-300x300.jpg",
-    "http://thispix.com/wp-content/uploads/2015/06/Edit_9509-1-300x300.jpg",
-    "http://thispix.com/wp-content/uploads/2015/06/Edit-4750-1-300x300.jpg",
-    "http://thispix.com/wp-content/uploads/2015/06/edited-TSP_3683-1-300x300.jpg",
-    "http://thispix.com/wp-content/uploads/2015/06/Edited-TSP_9353-1-300x300.jpg",
-    "http://thispix.com/wp-content/uploads/2015/06/E-3626-1-300x300.jpg",
-    "http://thispix.com/wp-content/uploads/2015/06/Copy-of-Edit-3840-1-300x300.jpg",
-    "http://thispix.com/wp-content/uploads/2015/06/014-150x150.jpg",
-    "http://thispix.com/wp-content/uploads/2015/06/portrait-profile-014-150x150.jpg"
+    this.rootAssetPath + '/assets/profiles/p1.jpg',
+    this.rootAssetPath + '/assets/profiles/p2.png',
+    this.rootAssetPath + '/assets/profiles/p3.png',
+    this.rootAssetPath + '/assets/profiles/p4.png',
+    this.rootAssetPath + '/assets/profiles/p5.png',
+    this.rootAssetPath + '/assets/profiles/p6.jpg',
+    this.rootAssetPath + '/assets/profiles/p7.jpg',
+    this.rootAssetPath + '/assets/profiles/p8.jpg',
+    this.rootAssetPath + '/assets/profiles/p9.jpg',
+    this.rootAssetPath + '/assets/profiles/p10.jpg',
+    this.rootAssetPath + '/assets/profiles/p11.jpg',
+    this.rootAssetPath + '/assets/profiles/p12.jpg',
+    this.rootAssetPath + '/assets/profiles/p13.jpg',
+    this.rootAssetPath + '/assets/profiles/p14.jpg',
+    this.rootAssetPath + '/assets/profiles/p15.jpg',
+    this.rootAssetPath + '/assets/profiles/p16.jpg',
+    this.rootAssetPath + '/assets/profiles/p17.jpg',
+    this.rootAssetPath + '/assets/profiles/p18.jpg',
+
   ]
 
   private descriptions = [
